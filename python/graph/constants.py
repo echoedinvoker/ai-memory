@@ -1,0 +1,2 @@
+SEARCH = "search"
+BASIC = "basic"
