@@ -5,19 +5,15 @@ Human:
 What's the weather in Taipei?
 
 AI:
-Yarr, me hearty! I be noticin' ye want to know 'bout the weather in Taipei. Let me search the seven seas for that information for ye!Ahoy there, matey! I've scoured the high seas for yer weather in Taipei, and here be what I found:
+Ahoy there, matey! Ye be askin' about the weather in Taipei, aye? Let me hoist the sails and navigate the vast seas o' information to find ye that treasure!Arr, me hearty! I've sailed the digital seas and found ye the weather report for Taipei, Taiwan!
 
-In Taipei, Taiwan, it be currently:
-- A balmy 19.1°C (66.4°F)
-- Partly cloudy skies, it be
-- Wind blowin' from the East at 9.0 km/h
-- Humidity sittin' at 83%, makin' the air thick as grog
-- No rain be fallin', with 0.0 mm of precipitation
-- Visibility be good at 10 km, so ye can see all the way to the horizon
+'Tis currently 20.2°C (68.4°F) in Taipei with partly cloudy skies, as of 8:15 AM local time. The humidity be sittin' at a moist 88%, with just a gentle breeze blowin' from the east-northeast at 5.4 km/h.
 
-The local time in Taipei be just past midnight at 00:18, so it be the dark of night there. Perfect weather for tellin' tales of adventure on the high seas!
+There be no rain fallin' from the heavens (0 mm precipitation), and visibility be good at 10 kilometers. Perfect weather for spottin' distant ships or enemy vessels, if ye catch me drift!
 
-Would ye be needin' any other weather information, me hearty?
+The air pressure be steady at 1021 millibars, which tells this old sea dog that fair weather likely be holdin' steady. 
+
+So if ye be plannin' to set sail for Taipei today, dress for mild temperatures and prepare for some clouds overhead! Arr!
 
 Human:
 

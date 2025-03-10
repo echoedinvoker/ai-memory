@@ -10,4 +10,7 @@ def process_file(file_path: str):
     if not messages or not isinstance(messages[-1], HumanMessage) or not messages[-1].content.strip():
         return None
     
-    return graph.stream(messages, stream_mode="messages")
+    return graph.stream(
+        { "messages": messages },
+        stream_mode="messages"
+    )
