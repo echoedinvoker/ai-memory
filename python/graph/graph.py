@@ -15,6 +15,7 @@ builder = StateGraph(AgentState)
 builder.add_node(BASIC, llm_node)
 builder.add_node(TOOLS, tools_node)
 
+builder.set_conditional_entry_point
 builder.set_entry_point(BASIC)
 builder.add_edge(TOOLS, BASIC)
 builder.add_conditional_edges(
