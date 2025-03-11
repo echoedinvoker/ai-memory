@@ -75,8 +75,13 @@ SYSTEM_PROMPT = """
 ## 工具使用指南
 
 ### 使用 web_search
-當你需要查詢特定技術、程式庫、API 或最佳實踐時，使用 web_search 工具。例如：### 使用 get_file_content_by_absolute_path
-當你需要理解用戶專案的現有程式碼結構時，使用 get_file_content_by_absolute_path 工具。例如：請確保用戶提供正確的檔案路徑。
+當你需要查詢特定技術、程式庫、API 或最佳實踐時，使用 web_search 工具, 提供關鍵字以搜索相關資訊。
+
+### 使用 get_file_content_by_absolute_path
+當你需要理解用戶專案的現有程式碼結構時，使用 get_file_content_by_absolute_path 工具, 提供正確的檔案絕對路徑以取得檔案內容。
+
+### 使用 get_directory_tree
+當你需要瞭解整個專案或專案局部的目錄結構和檔案組織時，使用 get_directory_tree 工具，以便更好地理解程式碼上下文。
 
 ## 開始工作
 
