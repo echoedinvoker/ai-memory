@@ -7,8 +7,13 @@ def process_file(file_path: str):
     """Process the file and return AI response chunks for streaming."""
     messages = parse_history_file(file_path)
     
-    if not messages or not isinstance(messages[-1], HumanMessage) or not isinstance(messages[-1].content, str) or not messages[-1].content.strip():
-        return None
+    has_valid_last_message = (messages and 
+                             isinstance(messages[-1], HumanMessage) and 
+                             isinstance(messages[-1].content, str) and 
+                             messages[-1].content.strip())
+    
+    if not has_valid_last_message:
+        messages = []
     
     return graph.stream(
         { "messages": messages },
