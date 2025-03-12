@@ -16,6 +16,10 @@ summarize_prompt = ChatPromptTemplate.from_template(
     關鍵字與用戶核心意圖: ...
     整合後的新問題: ...
 
+整合後的新問題請遵循以下規則:
+1. 保留與問題相關的程式碼片段以讓後續 agent 更清楚問題點所在
+2. 每個程式碼片段都需要告知其所在的檔案的絕對路徑，這非常重要，因為之後的 agent 必須知道檔案的絕對路徑才能使用工具讀取檔案內容進行回答
+
 請開始對以下對話進行摘要：
 {messages}""",
     variables=["messages"]
