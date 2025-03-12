@@ -19,7 +19,6 @@ def route_by_messages(state: AgentState):
     else:
         return SUMMARY
 
-
 builder = StateGraph(AgentState)
 
 builder.add_node(BASIC, llm_node)

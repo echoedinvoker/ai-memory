@@ -17,5 +17,6 @@ def process_file(file_path: str):
     
     return graph.stream(
         { "messages": messages },
-        stream_mode="messages"
+        { "recursion_limit": 50 },
+        stream_mode="messages",
     )
