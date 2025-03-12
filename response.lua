@@ -78,6 +78,10 @@ local function handle_message(line, file_path)
         vim.cmd("edit!")
     elseif line == "NO_HUMAN_MESSAGE" then
         ui.notify("No human message to respond to. Please add a message to the file.", vim.log.levels.WARN)
+    elseif line == "FILE_UPDATED" then
+        vim.cmd("edit!")
+        utils.move_cursor_after_human()
+        ui.notify("File content updated with summarized question", vim.log.levels.INFO)
     elseif line:sub(1, 6) == "CHUNK:" then
         -- Process chunk content
         if is_streaming then
