@@ -4,11 +4,11 @@ load_dotenv()
 from langchain_core.messages import HumanMessage
 from langgraph.graph import END, StateGraph
 from langgraph.prebuilt import tools_condition
-from .nodes.basic_node import llm_node
-from .nodes.summary_node import summary_node
-from .constants import BASIC, TOOLS, SUMMARY
-from .nodes.tool_node import tools_node
-from .state import AgentState
+from python.graph.nodes.basic_node import llm_node
+from python.graph.nodes.summary_node import summary_node
+from python.graph.constants import BASIC, TOOLS, SUMMARY
+from python.graph.nodes.tool_node import tools_node
+from python.graph.state import AgentState
 
 
 
