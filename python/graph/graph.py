@@ -11,25 +11,13 @@ from python.graph.nodes.tool_node import tools_node
 from python.graph.state import AgentState
 
 
-
-def route_by_messages(state: AgentState):
-    """Route to different nodes based on messages content."""
-    if len(state["messages"]) == 1:
-        return BASIC
-    else:
-        return SUMMARY
-
 builder = StateGraph(AgentState)
 
 builder.add_node(BASIC, llm_node)
 builder.add_node(SUMMARY, summary_node)
 builder.add_node(TOOLS, tools_node)
 
-builder.set_conditional_entry_point(route_by_messages)
-
-builder.add_edge(TOOLS, BASIC)
-builder.add_edge(SUMMARY, BASIC)
-
+builder.set_entry_point(BASIC)
 builder.add_conditional_edges(
     BASIC,
     tools_condition,
@@ -38,6 +26,8 @@ builder.add_conditional_edges(
         "__end__": END,
     }
 )
+
+builder.add_edge(TOOLS, BASIC)
 
 graph = builder.compile()
 
