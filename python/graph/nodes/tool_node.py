@@ -23,7 +23,7 @@ def tools_node(state: AgentState) -> AgentState:
             tool_usage_count, 
             max_tool_uses, 
             last_message.tool_calls,
-            state["messages"],  # 傳遞所有 messages
+            state["messages"],  # type: ignore
             max_tokens
         )
         
