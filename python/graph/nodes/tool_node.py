@@ -11,7 +11,7 @@ def tools_node(state: AgentState) -> AgentState:
     tool_usage_count = state.get("tool_usage_count", 0)
     tool_results_cache = state.get("tool_results_cache", {})
     max_tool_uses = state.get("max_tool_uses", 20)
-    max_tokens = state.get("max_tokens", 50000)  # 設定一個默認的 tokens 上限
+    max_tokens = state.get("max_tokens", 100)  # 設定一個默認的 tokens 上限
     total_tokens = state.get("total_tokens", 0)  # 獲取當前 tokens 總數，默認為 0
 
     # 從最後一條消息中提取工具調用信息
