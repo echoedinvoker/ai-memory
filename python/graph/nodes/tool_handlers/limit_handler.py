@@ -73,7 +73,7 @@ def handle_tool_limit(
     tool_calls: list,
     messages: Optional[List[Union[BaseMessage, Dict[str, Any]]]] = None,
     max_tokens: int = 50000  # 設定一個默認的 tokens 上限
-) -> tuple[bool, list]:
+) -> tuple[bool, list, int]:
     """處理工具使用次數限制
     
     Args:
@@ -84,8 +84,11 @@ def handle_tool_limit(
         max_tokens: 最大 tokens 數量
         
     Returns:
-        tuple: (是否達到限制, 工具消息列表)
+        tuple: (是否達到限制, 工具消息列表, 當前 tokens 總數)
     """
+    # 初始化 tokens 計數
+    tokens_count = 0
+    
     # 檢查是否達到工具使用次數上限
     if tool_usage_count >= max_tool_uses and tool_calls:
         tool_messages = []
@@ -97,7 +100,15 @@ def handle_tool_limit(
             )
             tool_messages.append(tool_message)
         
-        return True, tool_messages
+        # 如果有消息，計算 tokens
+        if messages:
+            try:
+                all_content = extract_content_from_messages(messages)
+                tokens_count = calculate_tokens(all_content)
+            except Exception as e:
+                print(f"計算 tokens 時出現錯誤: {e}")
+        
+        return True, tool_messages, tokens_count
     
     # 檢查是否達到 tokens 上限
     if messages:
@@ -118,9 +129,9 @@ def handle_tool_limit(
                     )
                     tool_messages.append(tool_message)
                 
-                return True, tool_messages
+                return True, tool_messages, tokens_count
         except Exception as e:
             # 如果在處理 messages 時出現錯誤，記錄錯誤並繼續
             print(f"處理 messages 時出現錯誤: {e}")
     
-    return False, []  # 未達到限制
+    return False, [], tokens_count  # 未達到限制，返回 tokens 計數
