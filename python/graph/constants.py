@@ -1,5 +1,3 @@
 SEARCH = "search"
 BASIC = "basic"
 TOOLS = "tools"
-SUMMARY = "summary"
-NEW_QUESTION = "new_question"
